@@ -1,0 +1,6 @@
+<div class="col-md-12">
+    <div class="form-group">
+    	{!! Form::label('%1$s', %2$s) !!}
+    	%3$s
+    </div>
+</div>

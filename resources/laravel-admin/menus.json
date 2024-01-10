@@ -1,0 +1,10 @@
+{
+    "menus": [{
+        "section": "Modules",
+        "items": [{
+            "title": "SocialMedia",
+            "icon": "<i class=\"la la-globe\"></i>",
+            "url": "\/admin\/social-media"
+        }]
+    }]
+}

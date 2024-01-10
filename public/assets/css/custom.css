@@ -1,0 +1,29 @@
+.header-navbar .navbar-header .navbar-brand .brand-logo {
+    height: 70px;
+    width: 80px;
+    margin-top: -2px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+li.nav-item.mr-auto.brand-logo-wrapper {
+    width: 100%;
+    text-align: center;
+}
+.header-navbar .navbar-header .navbar-brand .brand-logo {
+    width: 111px;
+}
+.header-navbar .navbar-header .navbar-brand {
+    padding: 0;
+
+}
+body.vertical-layout.vertical-menu-modern.menu-expanded .navbar .navbar-header {
+    float: left;
+    width: 260px;
+    height: 83px !important;
+}
+ul.nav.navbar-nav.flex-row {
+    margin: 9px;
+}
+.main-menu.menu-fixed {
+    padding-top: 23px;
+}

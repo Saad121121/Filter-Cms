@@ -1,0 +1,6 @@
+<div class="col-md-12">
+    <div class="form-group">
+    	<label for="%1$s" class="col-md-4 control-label">{{ %2$s }}</label>
+        %3$s
+    </div>
+</div>

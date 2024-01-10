@@ -1,0 +1,194 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyRootNamespaceHttp\Requests;
+use DummyRootNamespaceHttp\Controllers\Controller;
+
+use DummyRootNamespace{{modelNamespace}}{{modelName}};
+use Illuminate\Http\Request;
+use Image;
+use File;
+
+class DummyClass extends Controller
+{
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\View\View
+     */
+
+    public function index(Request $request)
+    {
+        $model = str_slug('{{crudName}}','-');
+        if(auth()->user()->permissions()->where('name','=','view-'.$model)->first()!= null) {
+            $keyword = $request->get('search');
+            $perPage = {{pagination}};
+
+            if (!empty($keyword)) {
+                ${{crudName}} = {{modelName}}::{{whereSnippet}}paginate($perPage);
+            } else {
+                ${{crudName}} = {{modelName}}::paginate($perPage);
+            }
+
+            return view('{{viewPath}}{{viewName}}.index', compact('{{crudName}}'));
+        }
+        return response(view('403'), 403);
+
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function create()
+    {
+        $model = str_slug('{{crudName}}','-');
+        if(auth()->user()->permissions()->where('name','=','add-'.$model)->first()!= null) {
+            return view('{{viewPath}}{{viewName}}.create');
+        }
+        return response(view('403'), 403);
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function store(Request $request)
+    {
+        $model = str_slug('{{crudName}}','-');
+        if(auth()->user()->permissions()->where('name','=','add-'.$model)->first()!= null) {
+            {{validationRules}}
+
+            ${{crudName}} = new {{modelName}}($request->all());
+
+            if ($request->hasFile('image')) {
+
+                $file = $request->file('image');
+                
+                //make sure yo have image folder inside your public
+                ${{crudName}}_path = 'uploads/{{crudName}}s/';
+                $fileName = $file->getClientOriginalName();
+                $profileImage = date("Ymd").$fileName.".".$file->getClientOriginalExtension();
+
+                Image::make($file)->save(public_path(${{crudName}}_path) . DIRECTORY_SEPARATOR. $profileImage);
+
+                ${{crudName}}->image = ${{crudName}}_path.$profileImage;
+            }
+            
+            ${{crudName}}->save();
+            return redirect()->back()->with('message', '{{modelName}} added!');
+        }
+        return response(view('403'), 403);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\View\View
+     */
+    public function show($id)
+    {
+        $model = str_slug('{{crudName}}','-');
+        if(auth()->user()->permissions()->where('name','=','view-'.$model)->first()!= null) {
+            ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
+            return view('{{viewPath}}{{viewName}}.show', compact('{{crudNameSingular}}'));
+        }
+        return response(view('403'), 403);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $model = str_slug('{{crudName}}','-');
+        if(auth()->user()->permissions()->where('name','=','edit-'.$model)->first()!= null) {
+            ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
+            return view('{{viewPath}}{{viewName}}.edit', compact('{{crudNameSingular}}'));
+        }
+        return response(view('403'), 403);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function update(Request $request, $id)
+    {
+        $model = str_slug('{{crudName}}','-');
+        if(auth()->user()->permissions()->where('name','=','edit-'.$model)->first()!= null) {
+            {{validationRules}}
+            $requestData = $request->all();
+            {{fileSnippet}}
+
+        if ($request->hasFile('image')) {
+            
+            ${{crudName}} = {{modelName}}::where('id', $id)->first();
+            $image_path = public_path(${{crudName}}->image); 
+            
+            if(File::exists($image_path)) {
+                File::delete($image_path);
+            }
+
+            $file = $request->file('image');
+            $fileNameExt = $request->file('image')->getClientOriginalName();
+            $fileNameForm = str_replace(' ', '_', $fileNameExt);
+            $fileName = pathinfo($fileNameForm, PATHINFO_FILENAME);
+            $fileExt = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $fileName.'_'.time().'.'.$fileExt;
+            $pathToStore = public_path('uploads/{{crudName}}s/');
+            Image::make($file)->save($pathToStore . DIRECTORY_SEPARATOR. $fileNameToStore);
+
+             $requestData['image'] = 'uploads/{{crudName}}s/'.$fileNameToStore;               
+        }
+
+
+            ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
+            ${{crudNameSingular}}->update($requestData);
+            return redirect()->back()->with('message', '{{modelName}} updated!');
+        }
+        return response(view('403'), 403);
+
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function destroy($id)
+    {
+        $model = str_slug('{{crudName}}','-');
+        if(auth()->user()->permissions()->where('name','=','delete-'.$model)->first()!= null) {
+            {{modelName}}::destroy($id);
+            return redirect()->back()->with('message', '{{modelName}} deleted!');
+        }
+        return response(view('403'), 403);
+
+    }
+}

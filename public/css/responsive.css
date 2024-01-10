@@ -1,0 +1,376 @@
+@media (max-width: 1199.98px) {
+	.section-heading h6 {
+	    font-size: 20px;
+	    padding: 4px 20px;
+	}
+	li.nav-item {
+	    margin-left: 20px;
+	}
+	.navbar-light .navbar-nav .nav-link {
+	    font-size: 15px;
+	    padding: 0px 5px;
+	}
+	.btn-red {
+	    padding: 12px 20px !important;
+	}
+	.section-heading h1 {
+	    font-size: 70px;
+	    line-height: 60px;
+	}
+	.section-heading h5 {
+	    font-size: 24px;
+	    margin-top: 8px;
+	}
+	.banner-content {
+	    min-width: 550px;
+	    padding: 25px 0px 20px;
+	}
+	section.banner img {
+	    width: 200px;
+	}
+	.banner {
+	    padding: 40px 0px;
+	}
+	section.boxes-info {
+	    margin: 0px 0px;
+	}
+	section.boxes-info ul {
+	    margin-top: 40px;
+	    margin-bottom: 40px;
+	}
+	.mt-80{
+		margin-top: 40px;
+	}
+	.mb-80 {
+	    
+	    margin-bottom: 40px;
+	}
+	.classes-box img {
+	    margin-bottom: 20px;
+	}
+	.top-header ul li {
+	    margin: 0px 10px;
+	}
+	.newsletter-info {
+	    margin-top: 40px;
+	    margin-bottom: 50px;
+	}
+	.top-footer {
+    	padding-top: 40px;
+	    padding-bottom: 40px;
+	}
+	ul.footer-menu li a {
+	    margin: 0px 20px;
+	}
+	ul.footer-menu {
+	    margin-top: 30px;
+	}
+	section.learn-to-play {
+	    margin: 40px 0px;
+	}
+
+}
+
+@media (max-width: 991.98px) {
+	.top-header ul li {
+	    margin: 0px 4px;
+	}
+	.top-header ul img {
+    	height: 35px;
+    }
+    .section-heading h6 {
+	    font-size: 18px;
+	    padding: 4px 15px;
+	    letter-spacing: 2px;
+	}
+	ul.navbar-nav {
+	    align-items: baseline;
+	}
+	li.nav-item {
+	    margin-left: 0px;
+	    margin-bottom: 10px;
+	}
+	span.navbar-toggler-icon {
+	    filter: brightness(0) invert(1);
+	    color: red;
+	}
+	.navbar-light .navbar-toggler {
+	    background-color: #ce1f23;
+	}
+	.section-heading h1 {
+	    font-size: 50px;
+	    line-height: 46px;
+	}
+	.section-heading h5 {
+	    font-size: 20px;
+	    margin-top: 4px;
+	}
+	.banner-content {
+	    min-width: 420px;
+	    padding: 20px 0px 10px;
+	}
+	section.banner img {
+	    width: 150px;
+	}
+	.banner {
+	    padding: 20px 0px;
+	}
+	.boxes {
+	    width: 200px;
+	}
+	.section-heading h4 {
+	    font-size: 25px;
+	    max-width: 100%;
+        text-align-last: auto;
+	}
+	section.boxes-info ul li:first-child {
+	    margin-right: 20px;
+	}
+	.boxes h4 {
+	    font-size: 50px;
+	}
+	section.boxes-info ul {
+	    margin-top: 30px;
+	    margin-bottom: 30px;
+	}
+	.training-box {
+	    margin-top: 15px;
+	    margin-bottom: 15px;
+	}
+	.client-box {
+	    padding: 20px 20px 20px;
+	}
+	ul.footer-menu li a {
+	    margin: 0px 15px;
+	    font-size: 15px;
+	}
+	.top-footer {
+	    padding-top: 30px;
+	    padding-bottom: 30px;
+	}
+	ul.footer-menu {
+	    margin-top: 20px;
+	}
+	section.learn-to-play {
+	    margin: 30px 0px;
+	}
+	a.download_link{
+		margin-bottom: 15px;
+	}
+	.col-lg-6.pr-2 {
+	    padding-right: 15px !important;
+	}
+	.col-lg-6.pl-2{
+		padding-left: 15px !important;	
+	}
+	section.contact-info .row {
+	    justify-content: center;
+	}
+	.contact-info-box {
+	    height: 185px;
+	    padding: 20px 40px;
+	}
+	section.contact-info {
+	    margin: 40px 0px 50px;
+	}
+	.contact {
+	    margin-top: 30px;
+	}
+	section.location-contact h4 {
+	    margin-bottom: 20px;
+	}
+	div#v-pills-tab {
+    	flex-direction: row !important;
+	    justify-content: space-between;
+	}
+	.nav-pills .nav-link {
+	    flex: 0 0 45%;
+	}
+	.nav-pills .nav-link:before{
+		display: none;
+	}
+	.tab-boxes h4{
+		font-size: 34px;
+	}
+	section.upcoming-classes {
+	    margin: 40px 0px;
+	}
+	.boxes-star {
+	    background-size: cover;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.top-header ul img {
+	    display: none;
+	}
+	section.banner img{
+		display: none;
+	}
+	section.banner ul {
+	    display: block;
+	}
+	.section-heading h4 {
+	    font-size: 20px;
+	    line-height: initial;
+	}
+	.boxes {
+	    width: 180px;
+	}
+	.classes-box img {
+	    margin-bottom: 10px;
+	}
+	.mb-80 {
+	    margin-bottom: 30px;
+	}
+	.mt-80 {
+	    margin-top: 30px;
+	}
+	.training-box {
+    	margin-top: 10px;
+	    margin-bottom: 10px;
+	}
+	.newsletter-info {
+	    margin-top: 30px;
+	    margin-bottom: 30px;
+	}
+	.newsletter-info p {
+	    margin-bottom: 20px;
+	}
+	ul.footer-menu {
+	    flex-wrap: wrap;
+	}
+	ul.footer-menu li a {
+	    margin: 0px 15px;
+	    font-size: 14px;
+	}
+	.lower-footer {
+	    padding: 10px 0px;
+	}
+	.lower-footer p {
+	    font-size: 15px;
+	}
+	section.learn-to-play {
+	    margin: 20px 0px;
+	}
+	.section-heading h3{
+	    font-weight: 600;
+	    text-transform: uppercase;
+	    line-height: 35px;
+	    margin-bottom: 20px;
+	    font-size: 20px;
+	    line-height: 26px;
+	    margin-bottom: 10px;
+	}
+	section.shop{
+	    margin: 20px 0px;
+	}
+	.shop-box img {
+	    width: 80%;
+	}
+	.tab-boxes h4{
+	    letter-spacing: 1px;
+	}
+
+
+}
+
+@media (max-width: 575.98px) {
+	.top-header ul {
+	    display: block;
+	}
+	.top-header ul li{
+		margin:0px;
+	}
+	.section-heading h6 {
+	    font-size: 4vw;
+	    padding: 4px 10px;
+	    letter-spacing: 1px;
+	    text-align: CENTER;
+	}
+	.banner-content{
+		min-width: 100%;
+		padding: 12px 0px 4px;
+	}
+	.section-heading h1 {
+	    font-size: 38px;
+	    line-height: 36px;
+	}
+	.section-heading h5 {
+	    font-size: 15px;
+	    margin-top: 2px;
+	}
+	section.boxes-info ul {
+	    display: block;
+	    text-align: CENTER;
+	}
+	.boxes {
+	    margin: 0 auto;
+	}
+	.section-heading h4 {
+	    font-size: 17px;
+	}
+	section.boxes-info ul li:first-child {
+	    margin-right: 0px;
+	    margin-bottom: 15px;
+	}
+	section.boxes-info ul {
+	    margin-top: 20px;
+	    margin-bottom: 0px;
+	}
+	.boxes-star img {
+		height: 45px;
+	}
+	section.boxes-info {
+	    margin: 0px 0px 15px;
+	}
+	.classes-box {
+	    margin-bottom: 20px;
+	}
+	.mt-80 {
+	    margin-top: 20px;
+	}
+	.mb-80 {
+	    margin-bottom: 20px;
+	}
+	section.contact-info {
+	    margin: 20px 0px 40px;
+	}
+	.contact-info-box{
+	    margin-top: 20px;
+	}
+	section.location-contact h4 {
+	    margin-bottom: 10px;
+	    font-size: 24px;
+	}
+	.tab-boxes h4 {
+	    font-size: 6vw;
+	    line-height: initial;
+	}
+	.boxes.tab-boxes img {
+	    height: 40px;
+	}
+	section.upcoming-classes {
+	    margin: 20px 0px;
+	}
+	.tabs-content h1 {
+	    font-size: 28px;
+	}
+	.tabs-content {
+	    padding: 20px 20px;
+	}
+	.tabs-content input {
+	    height: 44px;
+	}
+	.tabs-content textarea {
+	    padding-top: 10px;
+	    padding-left: 15px;
+	    margin-bottom: 20px;
+	    height: 150px;
+	}
+	.boxes.classes-box img {
+        width: 100%;
+    }
+
+
+}

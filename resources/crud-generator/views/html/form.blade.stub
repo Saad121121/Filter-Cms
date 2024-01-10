@@ -1,0 +1,8 @@
+<div class="form-body">
+    <div class="row">
+    	%%formFieldsHtml%%
+    </div>
+</div>
+<div class="form-actions text-right pb-0">
+    <input class="btn btn-primary" type="submit" value="{{ $submitButtonText ?? 'Create' }}">
+</div>
